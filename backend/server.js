@@ -8,15 +8,26 @@ const PDFDocument = require('pdfkit');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Database connection pool
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'altibbe_db',
-  password: 'earth17@', // <-- IMPORTANT: Replace with your actual password
-  port: 5432,
-});
-
+// Database connection pool for Render
+let pool;
+if (process.env.DATABASE_URL) {
+    // For Render, use the DATABASE_URL environment variable
+    pool = new Pool({
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+            rejectUnauthorized: false
+        }
+    });
+} else {
+    // For local development, use your hardcoded credentials
+    pool = new Pool({
+        user: 'postgres',
+        host: 'localhost',
+        database: 'altibbe_db',
+        password: 'earth17@',
+        port: 5432,
+    });
+}
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
