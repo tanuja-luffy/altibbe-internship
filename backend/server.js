@@ -8,7 +8,7 @@ const PDFDocument = require('pdfkit');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Database connection pool for Render
+// Database connection pool
 let pool;
 if (process.env.DATABASE_URL) {
     // For Render, use the DATABASE_URL environment variable
@@ -28,6 +28,7 @@ if (process.env.DATABASE_URL) {
         port: 5432,
     });
 }
+
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
@@ -55,7 +56,7 @@ app.post('/api/register', async (req, res) => {
     );
     res.status(201).json({ id: result.rows[0].id, email });
   } catch (err) {
-    if (err.code === '23505') {
+    if (err.code === '23505') { // PostgreSQL unique violation error code
       return res.status(409).json({ error: 'Email already registered.' });
     }
     console.error('Registration Error:', err);
