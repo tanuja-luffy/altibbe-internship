@@ -17,7 +17,7 @@ const FinalStep = ({ formData, prevStep }: FinalStepProps) => {
     setLoading(true);
     setStatus(null);
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/products`, {
+      const response = await fetch(`/api/products`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -16,7 +16,7 @@ const ReportDashboard = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-     const response = await fetch(`/api/products`);
+     const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/products`);
         if (!response.ok) {
           throw new Error('Failed to fetch products.');
         }
