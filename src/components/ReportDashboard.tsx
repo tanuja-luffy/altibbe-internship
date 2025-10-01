@@ -16,7 +16,7 @@ const ReportDashboard = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-     const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/products`);
+     const response = await fetch(`/api/products`);
         if (!response.ok) {
           throw new Error('Failed to fetch products.');
         }
@@ -53,7 +53,7 @@ const ReportDashboard = () => {
                   </p>
                 </div>
                 <a
-                  href={`http://localhost:5000/api/report/${product.id}`}
+                  href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/report/${product.id}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-md bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700 focus:outline-none"
