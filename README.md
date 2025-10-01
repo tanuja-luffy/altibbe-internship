@@ -13,8 +13,7 @@ Product Report Generation: A backend service that generates a downloadable PDF r
 Report Dashboard: A simple dashboard to view and download all previously submitted reports.
 
 Tech Stack
-Frontend:
-
+Frontend
 Next.js: A React framework for building server-rendered and static websites.
 
 TypeScript: Used for type-safe code.
@@ -23,8 +22,7 @@ Tailwind CSS: A utility-first CSS framework for rapid UI development.
 
 Vercel: Hosting platform for the frontend.
 
-Backend:
-
+Backend
 Node.js & Express: Used for building RESTful APIs.
 
 PostgreSQL: A powerful relational database for data storage.
@@ -33,8 +31,7 @@ Bcrypt: Used for password hashing and security.
 
 PDFKit: A Node.js library for generating PDF reports.
 
-AI Service:
-
+AI Service
 Python & Flask: A lightweight web framework for the AI microservice.
 
 Gemini API: A large language model used for generating dynamic questions.
@@ -43,7 +40,6 @@ Setup and Installation
 To run this project locally, you will need to start three separate services.
 
 1. Database Setup (PostgreSQL)
-
 Ensure you have PostgreSQL running on your machine.
 
 Use a client like pgAdmin or your terminal to create a new database named altibbe_db.
@@ -66,17 +62,15 @@ CREATE TABLE products (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 2. Backend Setup
-
 Navigate to the backend folder and run:
 
 Bash
 
 npm install
-node server.js
+npm start
 Your backend will run on http://localhost:5000.
 
 3. AI Service Setup
-
 Navigate to the ai-service folder.
 
 Create a Python virtual environment and install dependencies:
@@ -96,7 +90,6 @@ python app.py
 Your AI service will run on http://localhost:5001.
 
 4. Frontend Setup
-
 Navigate to the project root and run the Next.js app:
 
 Bash
@@ -105,11 +98,10 @@ npm install
 npm run dev
 The frontend will be available at http://localhost:3000.
 
-Reflection:
-Building this project was a hands-on lesson in both code and character. I used Gemini to refine my AI prompt, which allowed the app to ask dynamic questions that I hadn't originally considered, making the data more comprehensive. Tools like GitHub Copilot were force multipliers, helping me quickly write boilerplate code and debug errors like the Vercel-Render connection issues. This experience reinforced the importance of building with purpose—ensuring that every line of code contributes to a clear, ethical outcome for the user. I learned that the best tech not only works well but also serves a greater purpose rooted in transparency and trust.
-
+Reflection
+(This is where you will write your 3–5 line reflection on your experience.)
 
 Contact
-Name: Sarvani Tanuja
+Name: [Your Name]
 
-
+LinkedIn: [Your LinkedIn Profile URL]
